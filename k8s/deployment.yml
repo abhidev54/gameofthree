@@ -1,0 +1,17 @@
+apiVersion: gameofthree/v1
+kind: Deployment
+metadata:
+  name: gameofthree
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: gameofthree
+        visualize: "true"
+    spec:
+      containers:
+        - name: gameofthree-pod
+          image: gameofthree
+          ports:
+            - containerPort: 8081

@@ -1,0 +1,15 @@
+apiVersion: gameofthree/v1
+kind: Service
+metadata:
+  labels:
+    visualize: "true"
+  name: gameofthree-service
+spec:
+  selector:
+    app: gameofthree
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8081
+      targetPort: 8081
+  type: ClusterIP
